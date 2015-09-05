@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <div> -->
+<!--   <h1>&nbsp;&nbsp;Songbook</h1> -->
+<!-- </div> -->
+<div id="container">
+  <br/>
+  <div id="tablist" class="col-md-3">
+    <div class="list-group">
+      {% for tab in tabs %}
+      <a class="list-group-item"
+	 href="#"
+	 onclick="setSelection(this); displayTab({{tab.id}});">{{ tab.artist }} - {{ tab.title }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-md-9">
+    <pre id="tabview">
+    </pre>
+  </div>
+</div>
+{% endblock %}
