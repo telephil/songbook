@@ -7,6 +7,7 @@
   :bug-tracker "https://github.com/telephil/songbook/issues"
   :source-control (:git "git@github.com:telephil/songbook.git")
   :depends-on (:lucerne
+	       :parenscript
                :iterate
                :ceramic
                :uiop
@@ -15,17 +16,14 @@
                 :components
                 ((:module "css"
                   :components
-		  ((:static-file "style.css")
-		   (:static-file "bootstrap.min.css")))
-		 (:module "js"
-		  :components
-		  ((:static-file "scripts.js")))))
+		  ((:static-file "bootstrap.min.css")))))
 	       (:module "src"
 		:serial t
 		:components
 		((:file "package")
 		 (:file "tab")
 		 (:file "model")
+		 (:file "js")
 		 (:file "webapp")
 		 (:file "songbook"))))
   :description "Explorer for guitar tabs in text format"

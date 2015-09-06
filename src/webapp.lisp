@@ -34,3 +34,7 @@
      (tab-content
       (find-tab
        (parse-integer id))))))
+
+@route app "/js"
+(defview get-js ()
+  (respond (gen-js)))
