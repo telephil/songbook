@@ -9,7 +9,6 @@
   :depends-on (:lucerne
 	       :parenscript
                :iterate
-               :ceramic
                :uiop
                :cl-ppcre)
   :components ((:module "assets"

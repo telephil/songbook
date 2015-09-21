@@ -3,21 +3,20 @@
 
 ;;; App resources
 
-(define-resources :songbook ()
-  (assets #p"assets/")
-  (templates #p"templates/"))
+(defun resource-directory (name)
+  (asdf:system-relative-pathname :songbook name))
 
 ;;; App
 
 (defapp app
   :middlewares ((clack.middleware.static:<clack-middleware-static>
-                 :root (resource-directory 'assets)
+                 :root (resource-directory #p"assets/")
                  :path "/static/")))
 
 ;;; Templates
 
 (djula:add-template-directory
- (resource-directory 'templates))
+ (resource-directory #p"templates/"))
 
 (defparameter +index+ (djula:compile-template* "index.html"))
 
