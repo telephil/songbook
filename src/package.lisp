@@ -5,4 +5,4 @@
   (:import-from :ceramic.resource
                 :define-resources
                 :resource-directory)
-  (:export :browse :run))
+  (:export :browse :shutdown))
