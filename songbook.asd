@@ -19,10 +19,10 @@
 	       (:module "src"
 		:serial t
 		:components
-		((:file "package")
+		((:file "js")
+		 (:file "package")
 		 (:file "tab")
 		 (:file "model")
-		 (:file "js")
 		 (:file "webapp")
 		 (:file "songbook"))))
   :description "Explorer for guitar tabs in text format"

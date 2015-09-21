@@ -1,4 +1,10 @@
-(in-package :songbook)
+(in-package :cl-user)
+
+(defpackage songbook.js
+  (:use :cl :parenscript)
+  (:export :gen-js))
+
+(in-package :songbook.js)
 
 (defun gen-js ()
   (ps

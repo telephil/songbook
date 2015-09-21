@@ -19,14 +19,14 @@
 (defun list-tabs (tabdir)
   "List all tab files in tabdir directory
 A tab file is a .txt file whose name is either 'Artist - Title' or 'Title'"
-  (iterate:iter
-   (iterate:for path in (uiop:directory-files tabdir "*.txt"))
-   (iterate:for id from 0)
-   (iterate:for name = (ppcre:regex-replace-all "_" (pathname-name path) " "))
-   (iterate:for scan = (cadr (multiple-value-list (ppcre:scan-to-strings *artist-title-regex* name))))
-   (iterate:for artist = (or (and scan (aref scan 0)) "Unknown Artist"))
-   (iterate:for title  = (or (and scan (aref scan 1)) name))
-   (iterate:collect (make-tab id artist title path))))
+  (iter
+   (for path in (uiop:directory-files tabdir "*.txt"))
+   (for id from 0)
+   (for name = (ppcre:regex-replace-all "_" (pathname-name path) " "))
+   (for scan = (cadr (multiple-value-list (ppcre:scan-to-strings *artist-title-regex* name))))
+   (for artist = (or (and scan (aref scan 0)) "Unknown Artist"))
+   (for title  = (or (and scan (aref scan 1)) name))
+   (collect (make-tab id artist title path))))
 
 (defun tab-match-p (pattern tab)
   "Check whether given tab artist name or title match the given pattern"
