@@ -35,6 +35,11 @@
       (find-tab
        (parse-integer id))))))
 
+@route app "/reload"
+(defview reload-view ()
+  (reload)
+  (redirect "/"))
+
 @route app "/js"
 (defview get-js ()
   (respond (gen-js)))
