@@ -13,6 +13,3 @@
 (defun find-tab (sid)
   (find-if (lambda (o) (= sid (id o))) *tabs*))
 
-(defun tab-content (tab)
-  (uiop:read-file-string (path tab)))
-

@@ -41,3 +41,6 @@ A tab file is a .txt file whose name is either 'Artist - Title' or 'Title'"
     (for tab in tabs)
     (when (tab-match-p pattern tab)
       (collect tab))))
+
+(defun tab-content (tab)
+  (uiop:read-file-string (path tab)))
