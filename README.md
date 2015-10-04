@@ -16,6 +16,9 @@ To start the web application use:
 
 The default port is 40000
 
+It also possible to start the webapp as a service using the provided `run.sh` script.
+You need to change the `TABDIR` variable in this script to suit your needs.
+
 # License
 
 Copyright (c) 2015 Philippe Mechai
